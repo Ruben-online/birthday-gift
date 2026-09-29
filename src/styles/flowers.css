@@ -1,0 +1,1142 @@
+/* ========================================
+   FLOWER SCENE
+======================================== */
+
+.flower-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  opacity: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 70%,
+      rgba(255, 255, 255, 0.62),
+      transparent 42%
+    );
+
+  animation: flowerSceneEntrance 0.7s 0.25s ease forwards;
+}
+
+
+/* ========================================
+   BACKGROUND GLOW
+======================================== */
+
+.flower-glow {
+  position: absolute;
+
+  left: 50%;
+  bottom: -120px;
+
+  width: min(900px, 95vw);
+  height: 620px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(238, 64, 115, 0.16) 0%,
+      rgba(247, 151, 180, 0.08) 38%,
+      transparent 72%
+    );
+
+  filter: blur(18px);
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.flower-message {
+  position: relative;
+  z-index: 30;
+
+  width: 100%;
+  margin-top: clamp(38px, 5vh, 62px);
+  padding: 0 20px;
+
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(12px);
+
+  animation: messageEntrance 0.9s 2.8s ease forwards;
+}
+
+.flower-eyebrow {
+  margin: 0 0 7px;
+
+  color: #d83d72;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.flower-message h2 {
+  margin: 0;
+
+  color: #3c292f;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 5.4vw, 4.8rem);
+  font-weight: 700;
+
+  line-height: 0.84;
+  letter-spacing: -0.035em;
+}
+
+.flower-message h2 span {
+  display: block;
+
+  color: #d83d72;
+
+  font-style: italic;
+  font-weight: 500;
+}
+
+.flower-copy {
+  margin: 18px 0 0;
+
+  color: #756368;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  font-style: italic;
+
+  line-height: 1.45;
+}
+
+.never-wilt {
+  margin: 8px 0 0;
+
+  color: #a87986;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  font-style: italic;
+}
+
+.never-wilt span {
+  color: #e83b70;
+}
+
+
+/* ========================================
+   GARDEN / BOUQUET
+======================================== */
+
+.garden {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 50%;
+  bottom: -18px;
+
+  width: min(760px, 96vw);
+  height: min(520px, 58vh);
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   ROSE BASE
+======================================== */
+
+.rose {
+  --rose-size: 92px;
+  --stem-height: 260px;
+  --delay: 0s;
+  --rose-rotate: 0deg;
+
+  position: absolute;
+
+  bottom: 0;
+
+  width: var(--rose-size);
+  height: calc(var(--stem-height) + var(--rose-size));
+
+  transform-origin: bottom center;
+
+  animation:
+    roseSway 5.5s calc(var(--delay) + 3s)
+    ease-in-out infinite alternate;
+}
+
+
+/* ========================================
+   BOUQUET COMPOSITION
+======================================== */
+
+/* Left bud */
+.rose-1 {
+  --rose-size: 54px;
+  --stem-height: 265px;
+  --rose-rotate: -15deg;
+
+  left: 13%;
+  bottom: -8px;
+
+  z-index: 2;
+
+  transform: rotate(-15deg);
+}
+
+/* Left open rose */
+.rose-2 {
+  --rose-size: 92px;
+  --stem-height: 285px;
+  --rose-rotate: -8deg;
+
+  left: 24%;
+  bottom: -15px;
+
+  z-index: 5;
+
+  transform: rotate(-8deg);
+}
+
+/* Main center rose */
+.rose-3 {
+  --rose-size: 125px;
+  --stem-height: 330px;
+  --rose-rotate: 0deg;
+
+  left: 50%;
+  bottom: -20px;
+
+  z-index: 8;
+
+  transform: translateX(-50%);
+}
+
+/* Right open rose */
+.rose-4 {
+  --rose-size: 96px;
+  --stem-height: 290px;
+  --rose-rotate: 8deg;
+
+  right: 24%;
+  bottom: -15px;
+
+  z-index: 6;
+
+  transform: rotate(8deg);
+}
+
+/* Lower left rose */
+.rose-5 {
+  --rose-size: 84px;
+  --stem-height: 210px;
+  --rose-rotate: -17deg;
+
+  left: 35%;
+  bottom: -24px;
+
+  z-index: 10;
+
+  transform: rotate(-17deg);
+}
+
+/* Lower right rose */
+.rose-6 {
+  --rose-size: 82px;
+  --stem-height: 205px;
+  --rose-rotate: 17deg;
+
+  right: 34%;
+  bottom: -26px;
+
+  z-index: 9;
+
+  transform: rotate(17deg);
+}
+
+/* Right bud */
+.rose-7 {
+  --rose-size: 52px;
+  --stem-height: 260px;
+  --rose-rotate: 16deg;
+
+  right: 13%;
+  bottom: -10px;
+
+  z-index: 2;
+
+  transform: rotate(16deg);
+}
+
+/* Small center bud */
+.rose-8 {
+  --rose-size: 46px;
+  --stem-height: 235px;
+  --rose-rotate: 5deg;
+
+  left: 61%;
+  bottom: -20px;
+
+  z-index: 4;
+
+  transform: rotate(5deg);
+}
+
+
+/* ========================================
+   STEM
+======================================== */
+
+.rose-stem {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 5px;
+  height: var(--stem-height);
+
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: bottom center;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #315f40 0%,
+      #62936b 35%,
+      #7bab82 55%,
+      #3d704b 100%
+    );
+
+  box-shadow:
+    inset 1px 0 rgba(255, 255, 255, 0.22),
+    0 2px 6px rgba(45, 92, 56, 0.12);
+
+  animation:
+    stemGrow 1.15s var(--delay)
+    cubic-bezier(0.2, 0.8, 0.3, 1)
+    forwards;
+}
+
+
+/* ========================================
+   LEAVES
+======================================== */
+
+.leaf {
+  position: absolute;
+
+  width: 48px;
+  height: 23px;
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #9abb96 0%,
+      #66966e 48%,
+      #3f704e 100%
+    );
+
+  box-shadow:
+    0 4px 7px rgba(54, 95, 62, 0.11);
+}
+
+.leaf::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 8%;
+
+  width: 84%;
+  height: 1px;
+
+  background: rgba(48, 91, 57, 0.38);
+
+  transform: rotate(-4deg);
+  transform-origin: left center;
+}
+
+.leaf-vein {
+  position: absolute;
+
+  left: 43%;
+  top: 48%;
+
+  width: 1px;
+  height: 65%;
+
+  background: rgba(255, 255, 255, 0.22);
+
+  transform: rotate(58deg);
+  transform-origin: top;
+}
+
+.leaf-left {
+  left: -43px;
+
+  border-radius: 100% 10% 100% 10%;
+
+  transform-origin: right center;
+  transform: rotate(28deg) scale(0);
+}
+
+.leaf-right {
+  right: -43px;
+
+  border-radius: 10% 100% 10% 100%;
+
+  transform-origin: left center;
+  transform: rotate(-28deg) scale(0);
+}
+
+.leaf-left-top {
+  top: 27%;
+}
+
+.leaf-right-middle {
+  top: 48%;
+}
+
+.leaf-left-bottom {
+  top: 67%;
+}
+
+.rose-stem .leaf {
+  animation:
+    leafGrowLeft 0.65s calc(var(--delay) + 0.58s)
+    cubic-bezier(0.2, 0.8, 0.3, 1.2)
+    forwards;
+}
+
+.rose-stem .leaf-right {
+  animation-name: leafGrowRight;
+}
+
+.rose-stem .leaf-right-middle {
+  animation-delay: calc(var(--delay) + 0.72s);
+}
+
+.rose-stem .leaf-left-bottom {
+  animation-delay: calc(var(--delay) + 0.86s);
+}
+
+
+/* ========================================
+   ROSE HEAD
+======================================== */
+
+.rose-head {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 0;
+  left: 50%;
+
+  width: var(--rose-size);
+  height: var(--rose-size);
+
+  transform: translateX(-50%);
+}
+
+
+/* ========================================
+   SEPALS
+======================================== */
+
+.rose-sepal {
+  position: absolute;
+
+  z-index: 1;
+
+  left: 50%;
+  bottom: 5%;
+
+  width: 20%;
+  height: 42%;
+
+  opacity: 0;
+
+  border-radius: 100% 0 100% 0;
+
+  background:
+    linear-gradient(
+      to top,
+      #376848,
+      #74a078
+    );
+
+  transform-origin: bottom center;
+
+  animation:
+    sepalOpen 0.55s calc(var(--delay) + 0.9s)
+    ease-out forwards;
+}
+
+.rose-sepal-1 {
+  transform: translateX(-50%) rotate(-42deg) scale(0);
+}
+
+.rose-sepal-2 {
+  transform: translateX(-50%) rotate(0deg) scale(0);
+}
+
+.rose-sepal-3 {
+  transform: translateX(-50%) rotate(42deg) scale(0);
+}
+
+
+/* ========================================
+   FLOWER
+======================================== */
+
+.rose-flower {
+  position: absolute;
+
+  z-index: 4;
+
+  inset: 0;
+
+  opacity: 1;
+
+  transform: scale(1);
+
+  filter:
+    drop-shadow(0 9px 9px rgba(143, 28, 63, 0.14));
+}
+
+
+/* ========================================
+   PETAL BASE
+======================================== */
+
+.petal {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  display: block;
+
+  opacity: 0;
+
+  transform-origin: 50% 88%;
+
+  background:
+    radial-gradient(
+      ellipse at 42% 25%,
+      #ff8ca4 0%,
+      #f45d80 25%,
+      #e72d60 60%,
+      #b81745 100%
+    );
+
+  box-shadow:
+    inset 2px 3px 5px rgba(255, 255, 255, 0.2),
+    inset -3px -5px 7px rgba(123, 11, 47, 0.16),
+    0 2px 3px rgba(124, 24, 54, 0.06);
+
+  animation:
+    petalBloom 0.72s
+    calc(var(--delay) + var(--petal-delay))
+    cubic-bezier(0.18, 0.82, 0.32, 1.25)
+    forwards;
+}
+
+
+/* ========================================
+   OUTER PETALS
+======================================== */
+
+.petal-1 {
+  --petal-delay: 1.03s;
+  --petal-transform: translate(-50%, -47%) rotate(0deg);
+
+  width: 82%;
+  height: 54%;
+
+  border-radius: 50% 50% 44% 44%;
+
+  transform: translate(-50%, -25%) rotate(0deg) scale(0.15);
+}
+
+.petal-2 {
+  --petal-delay: 1.08s;
+  --petal-transform: translate(-76%, -45%) rotate(-42deg);
+
+  width: 68%;
+  height: 61%;
+
+  border-radius: 65% 42% 62% 38%;
+
+  transform: translate(-64%, -20%) rotate(-42deg) scale(0.15);
+}
+
+.petal-3 {
+  --petal-delay: 1.13s;
+  --petal-transform: translate(-24%, -45%) rotate(42deg);
+
+  width: 68%;
+  height: 61%;
+
+  border-radius: 42% 65% 38% 62%;
+
+  transform: translate(-36%, -20%) rotate(42deg) scale(0.15);
+}
+
+.petal-4 {
+  --petal-delay: 1.18s;
+  --petal-transform: translate(-82%, -25%) rotate(-67deg);
+
+  width: 60%;
+  height: 58%;
+
+  border-radius: 75% 35% 65% 40%;
+
+  transform: translate(-65%, -8%) rotate(-67deg) scale(0.15);
+}
+
+.petal-5 {
+  --petal-delay: 1.23s;
+  --petal-transform: translate(-18%, -25%) rotate(67deg);
+
+  width: 60%;
+  height: 58%;
+
+  border-radius: 35% 75% 40% 65%;
+
+  transform: translate(-35%, -8%) rotate(67deg) scale(0.15);
+}
+
+.petal-6 {
+  --petal-delay: 1.28s;
+  --petal-transform: translate(-50%, -14%) rotate(180deg);
+
+  width: 72%;
+  height: 49%;
+
+  border-radius: 42% 42% 68% 68%;
+
+  transform: translate(-50%, 0%) rotate(180deg) scale(0.15);
+}
+
+
+/* ========================================
+   MIDDLE PETALS
+======================================== */
+
+.petal-7,
+.petal-8,
+.petal-9,
+.petal-10,
+.petal-11,
+.petal-12 {
+  z-index: 3;
+
+  width: 52%;
+  height: 57%;
+
+  background:
+    radial-gradient(
+      ellipse at 42% 24%,
+      #ff7897 0%,
+      #ed3c6b 42%,
+      #ca1d4e 100%
+    );
+}
+
+.petal-7 {
+  --petal-delay: 1.34s;
+  --petal-transform: translate(-50%, -58%) rotate(4deg);
+
+  border-radius: 60% 60% 45% 45%;
+  transform: translate(-50%, -32%) rotate(4deg) scale(0.15);
+}
+
+.petal-8 {
+  --petal-delay: 1.39s;
+  --petal-transform: translate(-72%, -43%) rotate(-35deg);
+
+  border-radius: 70% 42% 65% 40%;
+  transform: translate(-59%, -22%) rotate(-35deg) scale(0.15);
+}
+
+.petal-9 {
+  --petal-delay: 1.44s;
+  --petal-transform: translate(-28%, -43%) rotate(35deg);
+
+  border-radius: 42% 70% 40% 65%;
+  transform: translate(-41%, -22%) rotate(35deg) scale(0.15);
+}
+
+.petal-10 {
+  --petal-delay: 1.49s;
+  --petal-transform: translate(-72%, -19%) rotate(-62deg);
+
+  border-radius: 72% 40% 65% 42%;
+  transform: translate(-59%, -6%) rotate(-62deg) scale(0.15);
+}
+
+.petal-11 {
+  --petal-delay: 1.54s;
+  --petal-transform: translate(-28%, -19%) rotate(62deg);
+
+  border-radius: 40% 72% 42% 65%;
+  transform: translate(-41%, -6%) rotate(62deg) scale(0.15);
+}
+
+.petal-12 {
+  --petal-delay: 1.59s;
+  --petal-transform: translate(-50%, -8%) rotate(180deg);
+
+  border-radius: 45% 45% 68% 68%;
+  transform: translate(-50%, 4%) rotate(180deg) scale(0.15);
+}
+
+
+/* ========================================
+   INNER PETALS
+======================================== */
+
+.petal-13,
+.petal-14,
+.petal-15,
+.petal-16,
+.petal-17,
+.petal-18 {
+  z-index: 5;
+
+  width: 34%;
+  height: 43%;
+
+  background:
+    radial-gradient(
+      ellipse at 40% 20%,
+      #fa6688 0%,
+      #dc285b 48%,
+      #a91440 100%
+    );
+
+  box-shadow:
+    inset 1px 2px 3px rgba(255, 255, 255, 0.16),
+    inset -2px -3px 4px rgba(91, 8, 34, 0.22);
+}
+
+.petal-13 {
+  --petal-delay: 1.65s;
+  --petal-transform: translate(-50%, -62%) rotate(0deg);
+
+  border-radius: 60% 60% 45% 45%;
+  transform: translate(-50%, -36%) scale(0.1);
+}
+
+.petal-14 {
+  --petal-delay: 1.70s;
+  --petal-transform: translate(-66%, -47%) rotate(-36deg);
+
+  border-radius: 70% 42% 60% 40%;
+  transform: translate(-56%, -27%) rotate(-36deg) scale(0.1);
+}
+
+.petal-15 {
+  --petal-delay: 1.75s;
+  --petal-transform: translate(-34%, -47%) rotate(36deg);
+
+  border-radius: 42% 70% 40% 60%;
+  transform: translate(-44%, -27%) rotate(36deg) scale(0.1);
+}
+
+.petal-16 {
+  --petal-delay: 1.80s;
+  --petal-transform: translate(-64%, -24%) rotate(-65deg);
+
+  border-radius: 70% 40% 62% 42%;
+  transform: translate(-56%, -12%) rotate(-65deg) scale(0.1);
+}
+
+.petal-17 {
+  --petal-delay: 1.85s;
+  --petal-transform: translate(-36%, -24%) rotate(65deg);
+
+  border-radius: 40% 70% 42% 62%;
+  transform: translate(-44%, -12%) rotate(65deg) scale(0.1);
+}
+
+.petal-18 {
+  --petal-delay: 1.90s;
+  --petal-transform: translate(-50%, -16%) rotate(180deg);
+
+  border-radius: 45% 45% 70% 70%;
+  transform: translate(-50%, -4%) rotate(180deg) scale(0.1);
+}
+
+
+/* ========================================
+   ROSE CORE
+======================================== */
+
+.rose-core {
+  position: absolute;
+
+  z-index: 8;
+
+  left: 50%;
+  top: 50%;
+
+  width: 18%;
+  height: 20%;
+
+  opacity: 0;
+
+  border-radius: 48% 52% 55% 45%;
+
+  background:
+    radial-gradient(
+      circle at 40% 30%,
+      #f65d80,
+      #cc1c4d 52%,
+      #8f1036 100%
+    );
+
+  transform: translate(-50%, -30%) scale(0);
+
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.12);
+
+  animation:
+    coreBloom 0.55s calc(var(--delay) + 1.95s)
+    ease-out forwards;
+}
+
+
+/* ========================================
+   BUDS
+======================================== */
+
+.rose-bud .rose-head {
+  width: 68%;
+  height: 82%;
+
+  top: 9%;
+}
+
+.rose-bud .rose-flower {
+  transform: scale(0.82);
+  transform-origin: center bottom;
+}
+
+.rose-bud .petal {
+  display: none;
+}
+
+.rose-bud .petal-7,
+.rose-bud .petal-8,
+.rose-bud .petal-9,
+.rose-bud .petal-13,
+.rose-bud .petal-14,
+.rose-bud .petal-15 {
+  display: block;
+}
+
+.rose-bud .petal-7 {
+  --petal-transform: translate(-50%, -47%) rotate(0deg);
+
+  width: 65%;
+  height: 70%;
+}
+
+.rose-bud .petal-8 {
+  --petal-transform: translate(-68%, -31%) rotate(-25deg);
+
+  width: 55%;
+  height: 65%;
+}
+
+.rose-bud .petal-9 {
+  --petal-transform: translate(-32%, -31%) rotate(25deg);
+
+  width: 55%;
+  height: 65%;
+}
+
+.rose-bud .petal-13 {
+  --petal-transform: translate(-50%, -51%) rotate(3deg);
+
+  width: 42%;
+  height: 62%;
+}
+
+.rose-bud .petal-14 {
+  --petal-transform: translate(-59%, -35%) rotate(-22deg);
+
+  width: 39%;
+  height: 55%;
+}
+
+.rose-bud .petal-15 {
+  --petal-transform: translate(-41%, -35%) rotate(22deg);
+
+  width: 39%;
+  height: 55%;
+}
+
+.rose-bud .rose-core {
+  width: 17%;
+  height: 24%;
+}
+
+.rose-bud .rose-sepal {
+  height: 52%;
+  bottom: -2%;
+}
+
+
+/* ========================================
+   SPARKLES
+======================================== */
+
+.flower-sparkles {
+  position: absolute;
+  inset: 0;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+.flower-sparkles span {
+  position: absolute;
+
+  color: rgba(221, 59, 109, 0.38);
+
+  opacity: 0;
+
+  animation:
+    sparkle 2.8s 2.5s ease-in-out infinite;
+}
+
+.flower-sparkles span:nth-child(1) {
+  left: 19%;
+  top: 37%;
+  font-size: 13px;
+}
+
+.flower-sparkles span:nth-child(2) {
+  left: 30%;
+  top: 53%;
+  font-size: 8px;
+  animation-delay: 3s;
+}
+
+.flower-sparkles span:nth-child(3) {
+  right: 19%;
+  top: 38%;
+  font-size: 13px;
+  animation-delay: 3.3s;
+}
+
+.flower-sparkles span:nth-child(4) {
+  right: 29%;
+  top: 52%;
+  font-size: 8px;
+  animation-delay: 2.8s;
+}
+
+.flower-sparkles span:nth-child(5) {
+  left: 43%;
+  top: 34%;
+  font-size: 8px;
+  animation-delay: 3.5s;
+}
+
+.flower-sparkles span:nth-child(6) {
+  right: 42%;
+  top: 49%;
+  font-size: 10px;
+  animation-delay: 3.1s;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .flower-message {
+    margin-top:
+      calc(28px + env(safe-area-inset-top));
+
+    padding: 0 18px;
+  }
+
+  .flower-eyebrow {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .flower-message h2 {
+    font-size: clamp(2.65rem, 12vw, 3.7rem);
+    line-height: 0.88;
+  }
+
+  .flower-copy {
+    max-width: 350px;
+
+    margin: 14px auto 0;
+
+    font-size: 1.08rem;
+    line-height: 1.4;
+  }
+
+  .never-wilt {
+    margin-top: 7px;
+    font-size: 15px;
+  }
+
+  .garden {
+    bottom: -8px;
+
+    width: 100%;
+    height: min(440px, 54vh);
+  }
+
+  .rose-1 {
+    --rose-size: 38px;
+    --stem-height: 205px;
+
+    left: 3%;
+  }
+
+  .rose-2 {
+    --rose-size: 63px;
+    --stem-height: 225px;
+
+    left: 14%;
+  }
+
+  .rose-3 {
+    --rose-size: 86px;
+    --stem-height: 265px;
+
+    left: 50%;
+  }
+
+  .rose-4 {
+    --rose-size: 65px;
+    --stem-height: 225px;
+
+    right: 14%;
+  }
+
+  .rose-5 {
+    --rose-size: 57px;
+    --stem-height: 165px;
+
+    left: 29%;
+  }
+
+  .rose-6 {
+    --rose-size: 56px;
+    --stem-height: 160px;
+
+    right: 28%;
+  }
+
+  .rose-7 {
+    --rose-size: 38px;
+    --stem-height: 200px;
+
+    right: 3%;
+  }
+
+  .rose-8 {
+    --rose-size: 34px;
+    --stem-height: 190px;
+
+    left: 65%;
+  }
+
+  .rose-stem {
+    width: 4px;
+  }
+
+  .leaf {
+    width: 32px;
+    height: 16px;
+  }
+
+  .leaf-left {
+    left: -28px;
+  }
+
+  .leaf-right {
+    right: -28px;
+  }
+}
+
+
+/* ========================================
+   SHORT MOBILE SCREENS
+======================================== */
+
+@media (max-width: 600px) and (max-height: 760px) {
+  .flower-message {
+    margin-top:
+      calc(18px + env(safe-area-inset-top));
+  }
+
+  .flower-message h2 {
+    font-size: 2.55rem;
+  }
+
+  .flower-copy {
+    margin-top: 10px;
+    font-size: 0.86rem;
+  }
+
+  .never-wilt {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .garden {
+    height: 49vh;
+  }
+
+  .rose-3 {
+    --stem-height: 220px;
+  }
+
+  .rose-2,
+  .rose-4 {
+    --stem-height: 185px;
+  }
+
+  .rose-5,
+  .rose-6 {
+    --stem-height: 140px;
+  }
+}

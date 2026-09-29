@@ -1,0 +1,259 @@
+/* ========================================
+   INTRO
+======================================== */
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.09);
+  }
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes petalFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-13px) rotate(12deg);
+  }
+}
+
+
+/* ========================================
+   FLOWER SCENE
+======================================== */
+
+@keyframes flowerSceneEntrance {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ========================================
+   STEM GROWTH
+======================================== */
+
+@keyframes stemGrow {
+  from {
+    transform:
+      translateX(-50%)
+      scaleY(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%)
+      scaleY(1);
+  }
+}
+
+
+/* ========================================
+   LEAVES
+======================================== */
+
+@keyframes leafGrowLeft {
+  from {
+    opacity: 0;
+    transform: rotate(8deg) scale(0);
+  }
+
+  65% {
+    opacity: 1;
+    transform: rotate(33deg) scale(1.08);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(28deg) scale(1);
+  }
+}
+
+@keyframes leafGrowRight {
+  from {
+    opacity: 0;
+    transform: rotate(-8deg) scale(0);
+  }
+
+  65% {
+    opacity: 1;
+    transform: rotate(-33deg) scale(1.08);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(-28deg) scale(1);
+  }
+}
+
+
+/* ========================================
+   SEPALS
+======================================== */
+
+@keyframes sepalOpen {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+
+/* ========================================
+   PETAL BLOOM
+======================================== */
+
+@keyframes petalBloom {
+  0% {
+    opacity: 0;
+    transform:
+      var(--petal-transform)
+      scale(0.08);
+  }
+
+  55% {
+    opacity: 1;
+    transform:
+      var(--petal-transform)
+      scale(1.1);
+  }
+
+  78% {
+    opacity: 1;
+    transform:
+      var(--petal-transform)
+      scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      var(--petal-transform)
+      scale(1);
+  }
+}
+
+
+/* ========================================
+   ROSE CORE
+======================================== */
+
+@keyframes coreBloom {
+  from {
+    opacity: 0;
+    transform:
+      translate(-50%, -30%)
+      scale(0);
+  }
+
+  70% {
+    opacity: 1;
+    transform:
+      translate(-50%, -30%)
+      scale(1.12);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translate(-50%, -30%)
+      scale(1);
+  }
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+@keyframes messageEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ========================================
+   SPARKLES
+======================================== */
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+
+    transform:
+      translateY(5px)
+      scale(0.6)
+      rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.75;
+
+    transform:
+      translateY(-8px)
+      scale(1)
+      rotate(20deg);
+  }
+}
+
+
+/* ========================================
+   SUBTLE FLOWER MOVEMENT
+======================================== */
+
+@keyframes roseSway {
+  from {
+    margin-left: -2px;
+  }
+
+  to {
+    margin-left: 3px;
+  }
+}
