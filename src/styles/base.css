@@ -1,0 +1,71 @@
+/* ========================================
+   MAIN PAGE
+======================================== */
+
+.birthday-page {
+  width: 100%;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 24px;
+
+  background:
+    radial-gradient(
+      circle at 50% 43%,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(255, 255, 255, 0.22) 38%,
+      transparent 65%
+    ),
+    #fff0f4;
+
+  color: #3d292f;
+
+  transition: background 1.2s ease;
+}
+
+.birthday-page.gift-opened {
+  background:
+    radial-gradient(
+      circle at 50% 65%,
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 235, 241, 0.75) 35%,
+      transparent 65%
+    ),
+    #fde8ee;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .birthday-page {
+    min-height: 100dvh;
+
+    padding:
+      calc(55px + env(safe-area-inset-top))
+      20px
+      calc(70px + env(safe-area-inset-bottom));
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
